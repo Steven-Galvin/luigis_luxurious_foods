@@ -2,11 +2,11 @@
 
 <%= form_for @product do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, class: "form-control" %><br>
   <%= f.label :info %>
-  <%= f.text_area :info %>
+  <%= f.text_area :info, class: "form-control" %><br>
   <%= f.label :cost %>
-  <%= f.number_field :cost %>
+  $<%= f.number_field :cost, class: "form-control" %>.00<br>
   <%= f.label :origin %>
   <%= f.select(:origin, options_for_select([
     ["USA", "United States of America"],

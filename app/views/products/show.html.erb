@@ -1,8 +1,16 @@
 <h1><%= @product.name %></h1>
+<h4><%= @product.cost %></h4>
+<h5><%= @product.origin %></h5>
+
+<div class="product-info">
+  <%= @product.info %>
+</div>
 
 <% if @product.reviews.any? %>
   <% @product.reviews.each do |review| %>
-    <li><%= link_to review.author, product_review_path(@product, review) %></li>
+    <div class="review-panel">
+      <span class="rating"><%= review.rating %></span> <%= review.content %><br>
+      <small>by <%= review.author %></small></div>
   <% end %>
 <% else %>
   <em>No reviews for this product yet!</em>

@@ -4,4 +4,5 @@ class Product < ActiveRecord::Base
   validates :name, :info, :cost, :origin, presence: true
   validates :name, length: { in: 2..25 }
   validates :info, length: { in: 25..150 }
+  validates :cost, numericality: { greater_than: 0 }
 end
