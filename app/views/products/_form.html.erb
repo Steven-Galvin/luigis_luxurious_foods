@@ -1,0 +1,20 @@
+<%= render "layouts/errors", :object => @product %>
+
+<%= form_for @product do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :info %>
+  <%= f.text_area :info %>
+  <%= f.label :cost %>
+  <%= f.number_field :cost %>
+  <%= f.label :origin %>
+  <%= f.select(:origin, options_for_select([
+    ["USA", "United States of America"],
+    ["Canada", "Canada"],
+    ["Mexico", "Mexico"],
+    ["China", "China"],
+    ["Japan", "Japan"],
+    ["Germany", "Germany"]
+    ])) %>
+    <br>  <%= f.submit %>
+<% end %>
