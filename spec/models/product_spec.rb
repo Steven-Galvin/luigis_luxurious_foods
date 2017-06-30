@@ -7,8 +7,8 @@ describe Product do
   it { should validate_presence_of :origin }
   it { should have_many :reviews }
 
-  it "won't accept name length if less than 3 or greater than 25" do
-    product = Product.new({:name => "a".*(2), info: "a".*(30), cost: 4, origin: "USA"})
+  it "won't accept name length if less than 2 or greater than 25" do
+    product = Product.new({:name => "a".*(1), info: "a".*(30), cost: 4, origin: "USA"})
     product2 = Product.new({:name => "a".*(26), info: "a".*(30), cost: 4, origin: "USA"})
     expect(product.save() && product2.save()).to(eq(false))
   end
