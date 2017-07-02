@@ -10,11 +10,12 @@ This website was made using Ruby, version 2.4.1, and Rails, version 5.1. It's pu
 ## Planning
 
 ### 1. Configuration/dependencies
-  The app will primarily use Ruby on Rails and the SQL database. It was made with what I learned from week 1 of Epicodus' Rails course.
+  The app will primarily use Ruby on Rails and the SQL database. It was made with what I learned from week 1 of Epicodus' Rails course. Styled with bootstrap and SASS
 
-  Stretch goals include:
-  * Using Sass to style the page better
+  Future plans include:
   * Hosting the site live
+  * Adding user authentication
+  * Updating the style of the page
 
 ### 2. User Stories
   * As a user, I'd like to visit a page to see a list of all products.
@@ -32,7 +33,7 @@ This website was made using Ruby, version 2.4.1, and Rails, version 5.1. It's pu
   * Dynamic products pages with reviews
 
 ### 4. UX/UI
-  * Include Bootstrap, sass is a stretch goal.
+  * Include Bootstrap & SASS
 
 ### 5. Polish
   * Refactor code.
@@ -55,7 +56,7 @@ As of writing this README, these instructions work on MacOS.
 
 * Run `$ git clone <this-repository-url>`
 * Then `$ cd luigis-luxurious-foods`
-* Once in the luigis-luxurious-foods folder, run `$ rails db:create`, `$ rails db:migrate`, and `$ rails s`. Then visit http://localhost:3000/ to view the app.
+* Once in the luigis-luxurious-foods folder, run `$ rails db:create`, `$ rails db:migrate`, `$ rails db:seed`, and `$ rails s`. Then visit http://localhost:3000/ to view the app.
 
 ## Built With
 
