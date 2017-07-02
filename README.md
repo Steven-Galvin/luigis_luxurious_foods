@@ -5,7 +5,7 @@
 This website was made using Ruby, version 2.4.1, and Rails, version 5.1. It's purpose is to allow the user to have CRUD functionality over products as well as reviews for those products. It uses scopes to organize products by most reviewed, or most recently added, and other similar filters. It also uses validations and callbacks to make sure the information is entered correctly and keeps errors to a minimum.
 
 ## Landing Page:
-![](./app/assets/images/landing.png "Luigi's Luxurious Foods")
+![](./app/assets/images/home.png "Luigi's Luxurious Foods")
 
 ## Planning
 

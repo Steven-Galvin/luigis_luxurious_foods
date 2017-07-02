@@ -1,18 +1,68 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Caption|Raleway|Ubuntu');
 
+$body-bg-color: #fafafa;
+
+$content-bg-color: #f4f6f4;
+
+$navbar-bg-color: #d2d2d2;
 $navbar-color: #333;
 $navbar-color-hvr: #0a0a0a;
 
+$products-color: #1e1e1e;
+$products-bg-color: rgba(30,30,30,0.3);
 
 $btn: #002600;
 $btn-bg: rgba(0,38,0,0.3);
 $btn-hvr: #4c674c;
 $btn-bg-hvr: rgba(76,103,76,0.3);
 
+$new-btn: #008080;
+$new-btn-bg: rgba(0,128,128,0.3);
+$new-btn-hvr: #329999;
+$new-btn-bg-hvr: rgba(50,153,153,0.3);
+
+$back-btn: #011F4B;
+$back-btn-bg: rgba(1,31,75,0.3);
+$back-btn-hvr: #334B6E;
+$back-btn-bg-hvr: rgba(51,75,110,0.3);
+
+$edit-btn: #CD9B1D;
+$edit-btn-bg: rgba(205,155,29,0.3);
+$edit-btn-hvr: #D7AF4A;
+$edit-btn-bg-hvr: rgba(215,175,74,0.3);
+
+$delete-btn: #6B0023;
+$delete-btn-bg: rgba(107,0,35,0.3);
+$delete-btn-hvr: #88324E;
+$delete-btn-bg-hvr: rgba(136,50,78,0.3);
+
+
+body {
+  background-color: $body-bg-color;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+hr{
+  border-color: $navbar-color;
+}
+
+.content {
+  background-color: $content-bg-color;
+  border-left: 5px double $navbar-color;
+  border-bottom: 5px double $navbar-color;
+  border-right: 5px double $navbar-color;
+  padding-bottom: 20px;
+}
+
 .review-panel {
-  border: 1px solid black;
-  background-color: grey;
+  border: 1px solid $navbar-color;
+  background-color: $navbar-bg-color;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
   padding: 15px;
   margin: 10px 0px;
@@ -20,7 +70,8 @@ $btn-bg-hvr: rgba(76,103,76,0.3);
 
 .filter-nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-top: 7px;
   .filter {
     border: 2px solid $btn;
     color: $btn;
@@ -38,14 +89,94 @@ $btn-bg-hvr: rgba(76,103,76,0.3);
   }
 }
 
-.product {
-  border-bottom: 1px double black;
-  padding: 15px 0px 15px 0px;
+.products {
+  margin: 20px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  .product {
+    display: flex;
+    justify-content: center;
+    flex-basis: 30%;
+    background-color: $products-bg-color;
+    border-bottom: 1px double $products-color;
+    border-radius: 7px;
+    padding: 15px;
+    color: $products-color;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
+
 
 .rating {
   font-size: 30px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+}
+
+.new {
+  border: 2px solid $new-btn;
+  color: $new-btn;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: $new-btn-bg;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: $new-btn-hvr;
+    border-color: $new-btn-hvr;
+    background-color: $new-btn-bg-hvr;
+    transform: scale(1.01);
+    text-decoration: none;
+  }
+}
+
+.go-back {
+  border: 2px solid $back-btn;
+  color: $back-btn;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: $back-btn-bg;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: $back-btn-hvr;
+    border-color: $back-btn-hvr;
+    background-color: $back-btn-bg-hvr;
+    transform: scale(1.01);
+    text-decoration: none;
+  }
+}
+
+.edit {
+  border: 2px solid $edit-btn;
+  color: $edit-btn;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: $edit-btn-bg;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: $edit-btn-hvr;
+    border-color: $edit-btn-hvr;
+    background-color: $edit-btn-bg-hvr;
+    transform: scale(1.01);
+    text-decoration: none;
+  }
+}
+
+.delete {
+  border: 2px solid $delete-btn;
+  color: $delete-btn;
+  border-radius: 4px;
+  padding: 5px;
+  background-color: $delete-btn-bg;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    color: $delete-btn-hvr;
+    border-color: $delete-btn-hvr;
+    background-color: $delete-btn-bg-hvr;
+    transform: scale(1.01);
+    text-decoration: none;
+  }
 }
 
 .form-control {
@@ -53,7 +184,21 @@ $btn-bg-hvr: rgba(76,103,76,0.3);
   width: 30%;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  .message {
+    padding: 7px;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    border: 1px solid $navbar-color;
+    border-radius: 3px;
+  }
+}
+
 .my-nav {
+  background-color: $navbar-bg-color;
   display: flex;
   align-items: center;
   border-bottom: solid 1px $navbar-color;
@@ -72,6 +217,7 @@ $btn-bg-hvr: rgba(76,103,76,0.3);
         text-decoration: none;
       }
       &.title {
+        font-family: 'PT Sans Caption', sans-serif;
         transform: scale(1.5);
       }
     }

@@ -13,10 +13,10 @@
       <div class="container">
         <%= link_to "Home", root_path, class: "navbar-links home" %>
         <%= link_to "Luigi's Luxurious Foods", root_path, class: "navbar-links title" %>
-        <%= link_to "Products", {:controller => "products", :action => "index", :filter => "all" }, class: "navbar-links products" %>
+        <%= link_to "Products", {:controller => "products", :action => "index", :filter => "all" }, class: "navbar-links products-link" %>
       </div>
     </div>
-    <div class="container">
+    <div class="container content">
       <%= flash[:alert] %>
       <%= flash[:notice] %>
       <%= yield %>

@@ -1,13 +1,13 @@
 <%= render "layouts/errors", :object => @product %>
 
 <%= form_for @product do |f| %>
-  <%= f.label :name %>:<br>
+  <%= f.label :name %><br>
   <%= f.text_field :name, class: "form-control" %><br><br>
-  <%= f.label :info %>:<br>
+  <%= f.label :info %><br>
   <%= f.text_area :info, class: "form-control" %><br><br>
-  <%= f.label :cost %>:<br>
+  <%= f.label :cost %><br>
   $<%= f.number_field :cost, class: "form-control" %>.00<br><br>
-  <%= f.label :origin %>:<br>
+  <%= f.label :origin %><br>
   <%= f.select :origin, options_for_select([
     ["USA", "United States of America"],
     ["Canada", "Canada"],
@@ -18,5 +18,6 @@
     ]), {}, {class: "form-control"} %>
     <br>
     <br>
-  <%= f.submit class: "btn btn-default"  %>
+  <%= f.submit class: "new"  %>
+  <%= link_to "All Products", {:controller => "products", :action => "index", :filter => "all" }, class: "go-back" %>
 <% end %>

@@ -1,15 +1,20 @@
 <h1><%= @product.name %></h1>
-<h4><%= @product.cost %></h4>
-<h5><%= @product.origin %></h5>
+<h4>$<%= @product.cost %>.00</h4>
+<h5>Country of Origin: <%= @product.origin %></h5>
 
 <div class="product-info">
   <%= @product.info %>
 </div>
 
+<hr>
+
+<h3>Reviews</h3>
+
 <% if @product.reviews.any? %>
   <% @product.reviews.each do |review| %>
     <div class="review-panel">
-      <span class="rating"><%= review.rating %></span> <%= review.content %><br>
+      <span class="rating">Rating: <%= review.rating %></span><br>
+      <%= review.content %><br>
       <small>by <%= review.author %></small></div>
   <% end %>
 <% else %>
@@ -17,9 +22,9 @@
 <% end %>
 
 <hr>
-<span><%= link_to "Edit", edit_product_path(@product) %></span> |
-<span><%= link_to "Delete", product_path(@product),
+<%= link_to "Edit", edit_product_path(@product), class: "edit" %>
+<%= link_to "Delete", product_path(@product),
                          :data => {:confirm => "You sure?",
-                                   :method => "delete"} %></span> |
-<span><%= link_to "Return to products", products_path %></span> |
-<span><%= link_to "Add new review", new_product_review_path(@product) %></span>
+                                   :method => "delete"}, class: "delete" %>
+<%= link_to "Return to Products", products_path, class: "go-back" %>
+<%= link_to "Add New Review", new_product_review_path(@product), class: "new"%>

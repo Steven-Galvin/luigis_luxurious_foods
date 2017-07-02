@@ -1,18 +1,20 @@
 <%= render "layouts/errors", :object => @review %>
 
 <%= form_for [@product, @review] do |f| %>
-  <%= f.label :author %>
-  <%= f.text_field :author %>
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  <%= f.label :rating %>
-  <%= f.select(:rating, options_for_select([
+  <%= f.label :author %><br>
+  <%= f.text_field :author, class: "form-control" %><br><br>
+  <%= f.label :content %><br>
+  <%= f.text_area :content, class: "form-control" %><br><br>
+  <%= f.label :rating %><br>
+  <%= f.select :rating, options_for_select([
     ["1", 1],
     ["2", 2],
     ["3", 3],
     ["4", 4],
     ["5", 5]
-    ])) %>
+    ]), {}, {class: "form-control"} %>
     <br>
-  <%= f.submit %>
+    <br>
+    <%= f.submit class: "new"  %>
+    <%= link_to "Back to Product", product_path(@product), class: "go-back" %>
 <% end %>
