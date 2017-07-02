@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Luigis Luxurious Food</title>
+    <title>Luigi's Luxurious Food</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,13 +11,14 @@
   <body>
     <div class="my-nav">
       <div class="container">
-        <ul>
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Products", products_path %></li>
-        </ul>
+        <%= link_to "Home", root_path, class: "navbar-links home" %>
+        <%= link_to "Luigi's Luxurious Foods", root_path, class: "navbar-links title" %>
+        <%= link_to "Products", {:controller => "products", :action => "index", :filter => "all" }, class: "navbar-links products" %>
       </div>
     </div>
     <div class="container">
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
       <%= yield %>
     </div>
   </body>

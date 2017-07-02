@@ -1,6 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$navbar-color: #333;
+$navbar-color-hvr: #0a0a0a;
+
+
+$btn: #002600;
+$btn-bg: rgba(0,38,0,0.3);
+$btn-hvr: #4c674c;
+$btn-bg-hvr: rgba(76,103,76,0.3);
+
 .review-panel {
   border: 1px solid black;
   background-color: grey;
@@ -9,21 +18,62 @@
   margin: 10px 0px;
 }
 
+.filter-nav {
+  display: flex;
+  justify-content: space-around;
+  .filter {
+    border: 2px solid $btn;
+    color: $btn;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: $btn-bg;
+    transition: 0.3s ease-in-out;
+    &:hover {
+      color: $btn-hvr;
+      border-color: $btn-hvr;
+      background-color: $btn-bg-hvr;
+      transform: scale(1.01);
+      text-decoration: none;
+    }
+  }
+}
+
+.product {
+  border-bottom: 1px double black;
+  padding: 15px 0px 15px 0px;
+}
+
 .rating {
   font-size: 30px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
 }
 
+.form-control {
+  display: inline !important;
+  width: 30%;
+}
+
 .my-nav {
-  border-bottom: solid 1px #333;
+  display: flex;
+  align-items: center;
+  border-bottom: solid 1px $navbar-color;
   width: 100%;
-  padding-top: 1em;
-  ul {
-    list-style: none;
-    padding: 0;
-    li {
-      display: inline-block;
-      margin-right: 1em;
+  height: 50px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    .navbar-links {
+      color: $navbar-color;
+      transition: .3s ease-in-out;
+      font-size: 20px;
+      &:hover {
+        transform: scale(1.01);
+        color: $navbar-color-hvr;
+        text-decoration: none;
+      }
+      &.title {
+        transform: scale(1.5);
+      }
     }
   }
 }

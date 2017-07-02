@@ -1,9 +1,22 @@
-<h1>Products</h1>
+<% if current_page?('/?filter=all')%>
+  <h1>All Products</h1>
+<% elsif current_page?('/?filter=usa_made') %>
+  <h1>USA Made Products</h1>
+<% elsif current_page?('/?filter=last_three') %>
+  <h1>Last Three Products</h1>
+<% elsif current_page?('/?filter=most_reviewed') %>
+  <h1>Most Reviewed Product</h1>
+<% else %>
+  <h1>Home</h1>
+<% end %>
+<div class="filter-nav">
+  <%= link_to "Made in the USA", {:controller => "products", :action => "index", :filter => "usa_made" }, class: 'filter' %>
+  <%= link_to "Most Recent Three", {:controller => "products", :action => "index", :filter => "last_three" }, class: 'filter' %>
+  <%= link_to "Most Reviewed", {:controller => "products", :action => "index", :filter => "most_reviewed" }, class: 'filter' %>
+</div>
 
-<ul>
-  <% @products.each do |product| %>
-    <li><%= link_to product.origin, product_path(product) %></li>
-  <% end %>
-</ul>
+<% @products.each do |product| %>
+  <div class="product"><%= link_to product.origin, product_path(product) %></div>
+<% end %>
 
 <%= link_to "New Product", new_product_path %>

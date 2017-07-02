@@ -1,6 +1,15 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.three_most_recent
+    if params[:filter] === "all"
+      @products = Product.all
+    elsif params[:filter] === "usa_made"
+      @products = Product.made_in_usa
+    elsif params[:filter] === "most_reviewed"
+      @products = Product.most_reviewed
+    else
+      @products = Product.three_most_recent
+    end
   end
 
   def show

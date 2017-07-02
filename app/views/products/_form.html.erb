@@ -1,21 +1,22 @@
 <%= render "layouts/errors", :object => @product %>
 
 <%= form_for @product do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, class: "form-control" %><br>
-  <%= f.label :info %>
-  <%= f.text_area :info, class: "form-control" %><br>
-  <%= f.label :cost %>
-  $<%= f.number_field :cost, class: "form-control" %>.00<br>
-  <%= f.label :origin %>
-  <%= f.select(:origin, options_for_select([
+  <%= f.label :name %>:<br>
+  <%= f.text_field :name, class: "form-control" %><br><br>
+  <%= f.label :info %>:<br>
+  <%= f.text_area :info, class: "form-control" %><br><br>
+  <%= f.label :cost %>:<br>
+  $<%= f.number_field :cost, class: "form-control" %>.00<br><br>
+  <%= f.label :origin %>:<br>
+  <%= f.select :origin, options_for_select([
     ["USA", "United States of America"],
     ["Canada", "Canada"],
     ["Mexico", "Mexico"],
     ["China", "China"],
     ["Japan", "Japan"],
     ["Germany", "Germany"]
-    ])) %>
+    ]), {}, {class: "form-control"} %>
     <br>
-  <%= f.submit %>
+    <br>
+  <%= f.submit class: "btn btn-default"  %>
 <% end %>

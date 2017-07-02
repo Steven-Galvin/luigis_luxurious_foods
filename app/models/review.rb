@@ -2,6 +2,7 @@ class Review < ActiveRecord::Base
   belongs_to :product
 
   validates :author, :content, :rating, :presence => true
+  validates :content, length: { in: 50..250 }
 
 # SPENT TWO HOURS TRYING TO GET THESE TO PASS. CANT FIND ANYTHING THAT SHOWS WHAT I'M DOING WRONG HERE
 
