@@ -5,11 +5,17 @@
 <div class="product-info">
   <%= @product.info %>
 </div>
-
+<div class="product-options">
+  <%= link_to "Edit", edit_product_path(@product), class: "edit" %>
+  <%= link_to "Delete", product_path(@product),
+  :data => {:confirm => "You sure?",
+    :method => "delete"}, class: "delete" %>
+  <%= link_to "Return to Products", products_path, class: "go-back" %>
+</div>
 <hr>
 
 <h3>Reviews</h3>
-
+<%= link_to "Add New Review", new_product_review_path(@product), class: "new"%>
 <% if @product.reviews.any? %>
   <% @product.reviews.each do |review| %>
     <div class="review-panel">
@@ -18,13 +24,5 @@
       <small>by <%= review.author %></small></div>
   <% end %>
 <% else %>
-  <em>No reviews for this product yet!</em>
+  <div class="no-reviews">No reviews for this product yet!</div>
 <% end %>
-
-<hr>
-<%= link_to "Edit", edit_product_path(@product), class: "edit" %>
-<%= link_to "Delete", product_path(@product),
-                         :data => {:confirm => "You sure?",
-                                   :method => "delete"}, class: "delete" %>
-<%= link_to "Return to Products", products_path, class: "go-back" %>
-<%= link_to "Add New Review", new_product_review_path(@product), class: "new"%>

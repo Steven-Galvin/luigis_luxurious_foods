@@ -60,11 +60,20 @@ hr{
   padding-bottom: 20px;
 }
 
+.product-options {
+  margin-top: 10px;
+}
+
 .review-panel {
   border: 1px solid $navbar-color;
   background-color: $navbar-bg-color;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
   padding: 15px;
+  margin: 10px 0px;
+}
+
+.no-reviews {
+  font-style: italic;
   margin: 10px 0px;
 }
 
