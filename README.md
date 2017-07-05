@@ -56,8 +56,7 @@ As of writing this README, these instructions work on MacOS.
 
 * Run `$ git clone <this-repository-url>`
 * Then `$ cd luigis-luxurious-foods`
-* Once in the luigis-luxurious-foods folder, run `$ rails db:create`, `$ rails db:migrate`, `$ rails db:seed`, and `$ rails s`. Then visit http://localhost:3000/ to view the app.
-
+* Once in the luigis-luxurious-foods folder, run bundle install to install gems, $ rails db:create to create the database, $ rails db:migrate to create the schema, $ rails db:seed to populate the database, and $ rails s to run the server. Then visit http://localhost:3000/ to view the app.
 ## Built With
 
 * Ruby ~> 2.4.1
